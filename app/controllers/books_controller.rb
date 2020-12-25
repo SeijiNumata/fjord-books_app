@@ -4,7 +4,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    # @books = Book.all
+    @books = Book.page(params[:page]).per(2).order(:id)
   end
 
   # GET /books/1
@@ -72,3 +73,4 @@ class BooksController < ApplicationController
       params.require(:book).permit(:title, :memo, :author, :picture)
     end
 end
+
