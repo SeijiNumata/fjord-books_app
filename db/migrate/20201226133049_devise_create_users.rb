@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.datetime :reset_password_sent_at
 
       ## Rememberable
-      ## ログイン状態を維持
+      ## ログイン状態を維持できる
       t.datetime :remember_created_at
 
       ## Trackable
