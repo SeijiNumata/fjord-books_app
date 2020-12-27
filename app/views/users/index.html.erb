@@ -1,0 +1,17 @@
+ <%= link_to 'Books', "/books" %>
+ <h1>ユーザー一覧</h1>
+ <table>
+   <thead>
+     <tr>
+       <th>User</th>
+     </tr>
+   </thead>
+   <tbody>
+   <% @users.each do |user| %>
+   <tr>
+      <td><p> <%= user.user_name %> </p> </td>
+     <td> <%= link_to 'Show', user %> </td>
+   </tr>
+   <% end %>
+   </tbody>
+ </table>

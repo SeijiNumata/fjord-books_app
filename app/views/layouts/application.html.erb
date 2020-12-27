@@ -21,8 +21,12 @@
     <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
   <% end %>
 </p>
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <%
+=begin%>
+ <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p> 
+<%
+=end%>
     <%= yield %>
   </body>
 </html>
