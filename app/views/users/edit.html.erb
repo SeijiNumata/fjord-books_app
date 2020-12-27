@@ -1,0 +1,9 @@
+<h1>プロフィール編集</h1>
+
+<%= form_with model: @user do |form| %>
+  <p>ユーザーネーム<%= form.text_field :user_name %></p>
+<p>自己紹介 : <%= form.text_field :introduce_yourself  %></p>
+ <p>郵便番号 : <%= form.text_field :postal_code %></p>
+ <p>住所 : <%= form.text_field :address %></p>
+  <div><%= form.submit "保存" %></div>
+<% end %>

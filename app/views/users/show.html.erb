@@ -1,4 +1,18 @@
-<h1>ユーザー詳細</h1>
-<p>ユーザーネーム : <%= @user.user_name %></p>
+<% if user_signed_in? && @user == current_user %>
+  <h1>マイページ</h1>
+<% else %>
+  <h1>ユーザーページ</h1>
+<% end %>
+<h2>ユーザーネーム : <%= @user.user_name %></h1>
 <p>メールアドレス : <%= @user.email %></p>
 <p>自己紹介 : <%= @user.introduce_yourself %></p>
+<% if user_signed_in? && @user == current_user %>
+ <p>郵便番号 : <%= @user.postal_code %></p>
+ <p>住所 : <%= @user.address %></p>
+  
+<% end %>
+
+
+ <% if user_signed_in? && @user == current_user %>
+   <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+ <% end %>
