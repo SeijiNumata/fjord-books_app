@@ -30,4 +30,59 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  attributes:
+    title: Title
+    memo: Memo
+    author: Author
+    picture: Picture
+  button:
+    edit: Edit
+    back: Back
+    show: Show
+    destroy: Destroy
+    new_book: 'New Book'
+  index:
+    books: "Books"
+    title: 'Title:'
+    memo: 'Memo:'
+    author: 'Author:'
+    picture: 'Picture:'
+  show:
+    title: 'Title:'
+    memo: 'Memo:'
+    author: 'Author:'
+    picture: 'Picture:'
+  edit:
+    book: "Edit book"
+  new:
+    book: "New Book"
+  respond:
+    success: 'Book was successfully created.'
+    update: 'Book was successfully updated.'
+    destroy: 'Book was successfully destroyed.'
+  helpers:
+    submit:
+      create: create
+      update: update
+      submit: submit
+    errors:
+    header:
+      one: "The next error occurred by the registration of the %{models}"
+      other: "%{count} errors occurred by the registration of the %{models}"
+  activerecord:
+    models:
+      book: book
+    attributes:
+      title: title
+      memo: memo
+      author: author
+      picture: picture
+    errors:
+      models:
+        book:
+          attributes:
+            title:
+              blank: "It empties. Please input."
+            memo:
+              blank: "It empties. Please input."
+              
