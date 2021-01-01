@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   def after_sign_in_path_for(resource)
     user_path(resource.id)
@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   protected
 
 def configure_permitted_parameters
-  devise_parameter_sanitizer.permit(:account_update, keys: [:user_name])
+  devise_parameter_sanitizer.permit(:account_update, keys: [:user_name,:postal_code,:address,:introduce_yourself])
 end
 end
