@@ -1,6 +1,6 @@
 <% if user_signed_in? && @user == current_user %>
-  <h1><%= t('devises.mypage')%></h1>
-  <table>
+<h1><%= t('devises.mypage')%></h1>
+<table>
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:user_name)%></th>
@@ -12,18 +12,18 @@
   </thead>
 
   <tbody>
-      <tr>
-        <td><%= @user.user_name %></td>
-        <td><%= @user.postal_code %></td>
-        <td><%= @user.address %></td>
-        <td><%= @user.email %></td>
-        <td><%= @user.introduce_yourself %></td>
-      </tr>
+    <tr>
+      <td><%= @user.user_name %></td>
+      <td><%= @user.postal_code %></td>
+      <td><%= @user.address %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.introduce_yourself %></td>
+    </tr>
   </tbody>
 </table>
 <% else %>
-  <h1><%= t('devises.user_page')%></h1>
-    <table>
+<h1><%= t('devises.user_page')%></h1>
+<table>
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:user_name)%></th>
@@ -32,11 +32,9 @@
   </thead>
 
   <tbody>
-      <tr>
-        <td><%= @user.user_name %></td>
-        <td><%= @user.introduce_yourself %></td>
-      </tr>
+    <tr>
+      <td><%= @user.user_name %></td>
+      <td><%= @user.introduce_yourself %></td>
+    </tr>
   </tbody>
-<% end %>
-
-
+  <% end %>
