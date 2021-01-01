@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       book: 本  #g
+      user: ユーザー
 
     attributes:
       book:
@@ -9,3 +10,19 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+      user:
+       user_name: ユーザーネーム
+       postal_code: 郵便番号
+       address: 住所
+       mail: メールアドレス
+       introduce_yourself: 自己紹介
+  devises:
+    mypage: マイページ
+    user_page: ユーザーページ
+    edit_user: プロフィール編集
+    Logout: ログアウト
+    now_user: "%{user}でログインしています"
+    edit:
+      password_description: 変える必要がない場合は空白にしてください
+      password_minimum: "%{num}文字以上"
+      cancel: "アカウントを削除"

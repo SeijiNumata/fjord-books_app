@@ -1,13 +1,13 @@
 <% if user_signed_in? && @user == current_user %>
-  <h1>マイページ</h1>
+  <h1><%= t('devises.mypage')%></h1>
   <table>
   <thead>
     <tr>
-      <th>名前</th>
-      <th>郵便番号</th>
-      <th>住所</th>
-      <th>アドレス</th>
-      <th>自己紹介</th>
+      <th><%= User.human_attribute_name(:user_name)%></th>
+      <th><%= User.human_attribute_name(:postal_code)%></th>
+      <th><%= User.human_attribute_name(:address)%></th>
+      <th><%= User.human_attribute_name(:mail)%></th>
+      <th><%= User.human_attribute_name(:introduce_yourself)%></th>
     </tr>
   </thead>
 
@@ -22,12 +22,15 @@
   </tbody>
 </table>
 <% else %>
-  <h1>ユーザーページ</h1>
+  <h1><%= t('devises.user_page')%></h1>
     <table>
   <thead>
     <tr>
-      <th>名前</th>
-      <th>自己紹介</th>
+      <th><%= User.human_attribute_name(:user_name)%></th>
+      <th><%= User.human_attribute_name(:introduce_yourself)%></th>
+           <td><%= @user.postal_code %></td>
+        <td><%= @user.address %></td>
+        <td><%= @user.email %></td>
     </tr>
   </thead>
 

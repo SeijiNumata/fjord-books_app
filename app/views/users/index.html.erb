@@ -1,9 +1,9 @@
- <%= link_to '本一覧へ', books_path %>
+ <%= link_to Book.model_name.human, books_path %>
  
  <table>
   <thead>
     <tr>
-      <th>ユーザー名</th>
+      <th><%= User.model_name.human %></th>
     </tr>
      </thead>
 
@@ -11,7 +11,7 @@
   <% @users.each do |user| %>
    <tr>
     <td><%= user.user_name %></td>
-    <td><%= link_to '詳細', user %></td>
+    <td><%= link_to t('views.common.show'), user %></td>
     </tr>
   <% end %>
     </tbody>

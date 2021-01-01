@@ -46,8 +46,8 @@ end
   User.create!(
     user_name: Faker::Name.name,
     password: Faker::Internet.password,
-    address: format("%0#{n}d", SecureRandom.random_number(10**n)),
-    postal_code: Faker::Address.name,
+    address: Faker::Address.street_name,
+    postal_code: Faker::Address.postcode,
     email: Faker::Internet.email,
     introduce_yourself: "こんにちは#{n}"
     )
