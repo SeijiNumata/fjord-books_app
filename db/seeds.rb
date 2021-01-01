@@ -46,7 +46,7 @@ end
   User.create!(
     user_name: Faker::Name.name,
     password: Faker::Internet.password,
-    address: Faker::Address.street_name,
+    address: Faker::Address.country,
     postal_code: Faker::Address.postcode,
     email: Faker::Internet.email,
     introduce_yourself: "こんにちは#{n}"
