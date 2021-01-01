@@ -50,7 +50,7 @@ end
     postal_code: Faker::Address.postcode,
     email: Faker::Internet.email,
     introduce_yourself: "こんにちは#{n}"
-    )
+  )
 end
 
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output
