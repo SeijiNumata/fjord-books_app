@@ -25,7 +25,7 @@ ja:
     Logout: ログアウト
     now_user: "%{user}でログインしています"
     forgot_password: "パスワードを忘れましたか？"
-    send_reset_password: "パスワードをリセットするURLを送る"
+    send_reset_password: "パスワードをリセットするためのURLを送る"
     edit:
       password_description: 変える必要がない場合は空白にしてください
       password_minimum: "%{num}文字以上"
