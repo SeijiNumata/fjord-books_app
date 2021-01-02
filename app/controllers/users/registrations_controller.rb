@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Users::RegistrationsController < Devise::RegistrationsController
   def build_resource(hash = {})
     # 自作したメソッドを使いuidを必ず埋める
@@ -6,9 +8,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   protected
-    def update_resource(resource, params)
-      return super if params["password"]&.present?
-      # 現在のパスワードなしでアカウントの更新をする
-      resource.update_without_password(params.except("current_password"))
-    end
+
+  def update_resource(resource, params)
+    return super if params['password']&.present?
+    # 現在のパスワードなしでアカウントの更新をする
+    resource.update_without_password(params.except('current_password'))
+  end
 end
