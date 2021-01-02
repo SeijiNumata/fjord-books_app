@@ -1,18 +1,16 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
-    @user = User.from_omniauth(request.env["omniauth.auth"])
+    # request.env["omniauth.auth"]にGitHubから送られてきたデータが入っている
+    # binding.pryで確認してみましょう
+    @user = User.find_for_github_oauth(request.env["omniauth.auth"])
+    puts "龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍#{@user}龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍龍" 
 
     if @user.persisted? # データベースに保存されていればログイン成功
-      sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
+      sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "Github") if is_navigational_format?
-    else
-      session["devise.github_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
+    else # ログイン失敗
+      session["devise.github_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
   end
-
-  def failure
-    redirect_to root_path
-  end
-end
 end
