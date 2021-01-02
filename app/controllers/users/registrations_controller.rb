@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   def build_resource(hash = {})
-    # 自作したメソッドを使いuidを必ず埋める
+    # 自作したメソッドを使いuidを埋める
     hash[:uid] = User.create_unique_string
     super
   end
