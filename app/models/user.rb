@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github]
 
   validates :uid, uniqueness: { scope: :provider }, if: -> { uid.present? }
-
+  has_one_attached :image
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
       user.name = auth.info.name
