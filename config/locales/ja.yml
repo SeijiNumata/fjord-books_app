@@ -1,0 +1,56 @@
+ja:
+  attributes:
+    title: タイトル
+    memo: メモ
+    author: 著者
+    picture: 画像
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    destroy: 削除
+    new_book: 新規作成
+  index:
+    books: 本一覧
+    title: タイトル
+    memo: メモ
+    author: 著者
+    picture: 画像
+  show:
+    title: 'タイトル:'
+    memo: 'メモ:'
+    author: '著者:'
+    picture: '画像:'
+  edit:
+    book: '本の編集'
+  new:
+    book: '新規追加'
+  respond:
+    success: 本の登録に成功しました 
+    update: 本の編集に成功しました
+    destroy: 本の削除に成功しました
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
+      submit: 保存する
+  errors:
+    header:
+      one: "%{model}の登録で次のエラーが発生しました。"
+      other: "%{model}の登録で%{count}件のエラーが発生しました"
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      title: タイトル
+      memo: メモ
+      author: 著者
+      picture: 画像
+    errors:
+      models:
+        book:
+          attributes:
+            title:
+              blank: "空になっています。入力してください。"
+            memo:
+              blank: "空になっています。入力してください。" 
