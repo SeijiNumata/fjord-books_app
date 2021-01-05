@@ -12,8 +12,7 @@
   <% end %>
 <% end %>
 
-<p>フォロー数</p>
-<%= user.followings.count %>
+<%= link_to  "フォロー数 #{user.followings.count}", following_user_path %> <br>
 
-<p>フォローワー数</p>
- <%= user.followers.count %><br>
+<%= link_to  "フォロワー数 #{user.followers.count}", followers_user_path %> <br>
+
