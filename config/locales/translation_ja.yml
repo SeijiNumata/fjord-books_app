@@ -27,8 +27,11 @@ ja:
     forgot_password: "パスワードを忘れましたか？"
     send_reset_password: "パスワードをリセットするためのURLを送る"
     password_minimum: "%{num}文字以上"
+    password_edit:
+      change_your_password: "パスワードを変更します"
+      new_password: "新しいパスワード"
+      confirm_new_password: "確認用パスワード"
     edit:
       password_description: 変える必要がない場合は空白にしてください
       password_minimum: "%{num}文字以上"
       cancel: "アカウントを削除"
-      
