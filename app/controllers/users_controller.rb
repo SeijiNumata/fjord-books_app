@@ -13,12 +13,11 @@ class UsersController < ApplicationController
   def following
     @user  = User.find(params[:id])
     @users = @user.followings
- end
+  end
 
- def followers
-  @user  = User.find(params[:id])
-  puts "龍#{@user}"
-  @users = @user.followers
-end
+  def followers
+   @user  = User.find(params[:id])
+   @users = @user.followers
+  end
 
 end
