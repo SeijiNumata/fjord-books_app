@@ -3,11 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "users/registrations" }
   root to: 'books#index'
   resources :books
-  resources :users, only: %i(index show)
-  resources :users do
-    member do
-      get :following, :followers
-    end
+  resources :users, only: %i(index show) do
+    resources :followings, only: [:index], module: 'users'
+    resources :followers, only: [:index], module: 'users'
   end
   
   resources :relationships, only: [:create, :destroy]
