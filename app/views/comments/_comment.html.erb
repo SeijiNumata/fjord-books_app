@@ -19,6 +19,7 @@
 
   <tbody>
 <% comments.each do |comment|%>
+     
       <tr>
          <td> <%= comment.body %></td>
          <% if comment.user.name=="" %>
