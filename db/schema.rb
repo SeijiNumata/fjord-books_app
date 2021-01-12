@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_01_12_063116) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -39,6 +40,9 @@ ActiveRecord::Schema.define(version: 2021_01_12_063116) do
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
+=======
+ActiveRecord::Schema.define(version: 2020_11_22_065204) do
+>>>>>>> 2ca1e533980e3d2cb229ef0c9d15398281e1ded7
 
   create_table "books", force: :cascade do |t|
     t.string "title"
