@@ -13,6 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       # パスワード変更を伴う場合はデフォルトの実装を使う
       super
-    ende
+    end
   end
 end
