@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ReportsController < ApplicationController
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
-  before_action :contribute_user?, only: [:edit, :update, :destroy]
+  before_action :set_report, only: %i[show edit update destroy]
+  before_action :contribute_user?, only: %i[edit update destroy]
 
   # GET /reports
   def index
@@ -12,7 +14,7 @@ class ReportsController < ApplicationController
     #  @comment=@report.comments.build(user_id: current_user.id)
     @comment = Comment.new
     #  @comments=@report.comments.all
-     @comments=@report.comments
+    @comments = @report.comments.includes(:user)
   end
 
   # GET /reports/new
@@ -22,8 +24,7 @@ class ReportsController < ApplicationController
   end
 
   # GET /reports/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /reports
   def create
@@ -52,28 +53,21 @@ class ReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_report
-      @report = Report.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def report_params
-      params.require(:report).permit(:title, :description,:user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    def contribute_user?
-      unless current_user == @report.user
-        redirect_to reports_path
-        flash[:notice] = '投稿者以外編集、削除はできません。'
-      end
-    end
+  # Only allow a list of trusted parameters through.
+  def report_params
+    params.require(:report).permit(:title, :description, :user_id)
+  end
+
+  def contribute_user?
+    return true if current_user == @report.user
+
+    redirect_to reports_path
+    flash[:notice] = '投稿者以外編集、削除はできません。'
+  end
 end
-
-# def comment_params
-#   params.require(:comment).permit(:commentable_type,:commentable_id,:body,:user_id)
-# end
-
-# def set_commentable  
-#   @commentable = Report.find(params[:report_id])  
-# end  
