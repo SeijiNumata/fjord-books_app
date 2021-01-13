@@ -33,7 +33,7 @@
   <% end %>
 </p>
 
-<%= render 'follow_button', user: @user %>
+<%= render 'follow_form', user: @user %>
 
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
