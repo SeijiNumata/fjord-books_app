@@ -27,7 +27,7 @@
          <% else %>
         <td> <%= comment.user.name %></td>
          <% end %>
-         <td> <%= l comment.created_at %><br></td>
+         <td> <%= l comment.created_at, format: :short  %><br></td>
       </tr>
     <% end %>
   </tbody>
