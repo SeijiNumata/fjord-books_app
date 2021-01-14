@@ -18,7 +18,7 @@ class RelationshipsController < ApplicationController
     if following.destroy
       flash[:notice] = t('controllers.follow.unfollow.success')
     else
-      flash.now[:alert] = t('controllers.follow.following.alert')
+      flash.now[:alert] = t('controllers.follow.unfollow.alert')
     end
     redirect_to @user
   end
