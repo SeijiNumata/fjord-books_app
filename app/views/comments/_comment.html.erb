@@ -1,0 +1,34 @@
+<h2>コメント投稿</h2>
+
+<%= form_with model: [commentable,comment ] do |f| %>  
+  <%= f.text_area :body ,:required => true %>  
+  <%= f.hidden_field :user_id,  :value => current_user.id %><br>
+   <%= f.submit "コメントをする" %>  
+<% end %>
+
+<h2>コメント一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>投稿者</th>
+      <th>投稿時間</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+<% comments.each do |comment|%>
+     
+      <tr>
+         <td> <%= comment.body %></td>
+         <% if comment.user.name=="" %>
+         <td> <%= comment.user.email %></td>
+         <% else %>
+        <td> <%= comment.user.name %></td>
+         <% end %>
+         <td> <%= l comment.created_at %><br></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
