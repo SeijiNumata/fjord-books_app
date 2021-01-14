@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
 
     if @comment.save
-      flash[:notice] = 'コメントを投稿しました'
+      flash[:notice] = t('controllers.common.notice_create', name: Comment.model_name.human)
       redirect_to @commentable
     else
       redirect_to :back, flash: {
