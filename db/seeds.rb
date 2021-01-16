@@ -53,7 +53,7 @@ User.destroy_all
     postal_code: "123-#{n.to_s.rjust(4, '0')}",
     address: Faker::Address.full_address,
     self_introduction: "こんにちは、#{name}です。",
-    uid:"#{n}"
+    uid: n.to_s
   )
 end
 
