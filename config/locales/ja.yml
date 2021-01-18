@@ -225,8 +225,8 @@ ja:
       next: '次'
       truncate: '...'
     follow:
-      index_followers: "フォロワー一覧"
-      index_followings: "フォローしているユーザー一覧"
+      index_followers: "%{name}のフォロワー一覧"
+      index_followings: "%{name}フォローしているユーザー一覧"
       follow: "フォロー"
       follower: "フォロワー"
       submit_unfollow: "フォロー解除"

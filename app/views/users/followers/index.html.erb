@@ -1,4 +1,4 @@
-<h1><%= "#{@user.name}の#{t('views.follow.index_followers')}"%></h1>
+<h1><%= t('views.follow.index_followers', name: @user.name)%></h1>
 <% @users.each do |user| %>
   <p><%= link_to user.name ,user %></p>
 <% end  %>
