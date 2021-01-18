@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -40,6 +41,7 @@ group :development do
   gem 'i18n_generators'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
+  gem 'pry-rails'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
@@ -62,3 +64,5 @@ gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
+gem 'omniauth'
+gem 'omniauth-github'
