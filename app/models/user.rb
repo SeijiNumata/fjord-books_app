@@ -5,7 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
-
+  validates :uid, presence: true, uniqueness: { scope: :provider }
+  
   # authの中身はGitHubから送られてくる大きなハッシュ。この中に名前やメアドなどが入っている。
   # providerカラムとuidカラムが送られてきたデータと一致するユーザーを探す。
   # もしユーザーが見つからない場合は新規作成する。
