@@ -5,8 +5,8 @@ require 'application_system_test_case'
 class ReportsTest < ApplicationSystemTestCase
   setup do
     visit root_url
-    fill_in 'Eメール',with:'alice@example.com'
-    fill_in 'パスワード',with:'password'
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'password'
     click_button 'ログイン'
   end
 
@@ -18,9 +18,8 @@ class ReportsTest < ApplicationSystemTestCase
   test 'creating a new report' do
     visit reports_url
     click_on '新規作成'
-    fill_in 'タイトル', with: "タイトル"
-    fill_in '内容', with: "内容"
+    fill_in 'タイトル', with: 'タイトル'
+    fill_in '内容', with: '内容'
     click_on '登録する'
   end
-
 end
