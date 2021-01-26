@@ -2,9 +2,8 @@
 
 require 'application_system_test_case'
 
-class BooksTest < ApplicationSystemTestCase
+class ReportsTest < ApplicationSystemTestCase
   setup do
-    @book = books(:one)
     visit root_url
     fill_in 'Eメール',with:'alice@example.com'
     fill_in 'パスワード',with:'password'
@@ -16,7 +15,7 @@ class BooksTest < ApplicationSystemTestCase
     assert_selector 'h1', text: '日報'
   end
 
-  test 'creating a new book' do
+  test 'creating a new report' do
     visit reports_url
     click_on '新規作成'
     fill_in 'タイトル', with: "タイトル"
