@@ -224,11 +224,25 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    follow:
+      index_followers: "%{name}のフォロワー一覧"
+      index_followings: "%{name}フォローしているユーザー一覧"
+      follow: "フォロー"
+      follower: "フォロワー"
+      submit_unfollow: "フォロー解除"
+      submit_follow: "フォローする"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    follow:
+      following:
+        success: "ユーザーをフォローしました"
+        alert: "ユーザーのフォローに失敗しました"
+      unfollow: 
+        success: "ユーザーのフォローを解除しました"
+        alert: "ユーザーのフォロー解除に失敗しました"
   layouts:
     application:
       menu: メニュー
