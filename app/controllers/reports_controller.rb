@@ -11,9 +11,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/1
   def show
-    #  @comment=@report.comments.build(user_id: current_user.id)
     @comment = Comment.new
-    #  @comments=@report.comments.all
     @comments = @report.comments.includes(:user).order(:id).page(params[:page])
   end
 
