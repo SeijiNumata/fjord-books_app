@@ -18,9 +18,11 @@ class ReportsTest < ApplicationSystemTestCase
   test 'creating a new report' do
     visit reports_url
     click_on '新規作成'
-    fill_in 'タイトル', with: 'タイトル'
-    fill_in '内容', with: '内容'
+    fill_in 'タイトル', with: '初めての日報投稿'
+    fill_in '内容', with: 'こんにちは、今日は雨が降っていました。'
     click_on '登録する'
     assert_text '日報が作成されました。'
+    assert_text '初めての日報投稿'
+    assert_text 'こんにちは、今日は雨が降っていました。'
   end
 end
