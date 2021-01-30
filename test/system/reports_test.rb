@@ -21,5 +21,6 @@ class ReportsTest < ApplicationSystemTestCase
     fill_in 'タイトル', with: 'タイトル'
     fill_in '内容', with: '内容'
     click_on '登録する'
+    assert_text '日報が作成されました。'
   end
 end
