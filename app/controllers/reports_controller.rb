@@ -66,5 +66,4 @@ class ReportsController < ApplicationController
     flash[:alert] = t('controllers.report.notice_alert')
   end
 
-
 end

@@ -10,7 +10,7 @@
   <%= @report.description %>
 </p>
 
-<% if current_user == @report.user %>
+<% if current_user?(@report) %>
 <%= link_to  t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
 <%= link_to  t('views.common.back'), reports_path %><br>
