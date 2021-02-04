@@ -1,6 +1,6 @@
 <h2><%= t('comments.post') %></h2>
 
-<%= form_with model: [commentable,comment ] do |f| %>
+<%= form_with model: [commentable,@comment] do |f| %>
 <%= f.text_area :body ,:required => true %>
 <%= f.hidden_field :user_id,  :value => current_user.id %><br>
 <%= f.submit  %>
@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% comments.each do |comment|%>
+    <% @comments.each do |comment|%>
     <tr>
       <td> <%= comment.body %></td>
       <% if comment.user.name=="" %>
