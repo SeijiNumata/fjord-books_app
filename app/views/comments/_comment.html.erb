@@ -1,8 +1,8 @@
 <h2><%= t('comments.post') %></h2>
 
-<%= form_with model: [commentable,@comment] do |f| %>
-<%= f.text_area :body ,:required => true %>
-<%= f.hidden_field :user_id,  :value => current_user.id %><br>
+<%= form_with model: [commentable, @comment] do |f| %>
+  <%= f.text_area :body, :required => true %>
+  <%= f.hidden_field :user_id,  :value => current_user.id %><br>
 <%= f.submit  %>
 <% end %>
 
@@ -21,9 +21,9 @@
     <tr>
       <td> <%= comment.body %></td>
       <% if comment.user.name=="" %>
-      <td> <%= comment.user.email %></td>
+        <td> <%= comment.user.email %></td>
       <% else %>
-      <td> <%= comment.user.name %></td>
+        <td> <%= comment.user.name %></td>
       <% end %>
       <td> <%= l comment.created_at, format: :short  %><br></td>
     </tr>
