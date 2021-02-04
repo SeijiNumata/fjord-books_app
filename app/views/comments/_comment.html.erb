@@ -20,7 +20,7 @@
     <% @comments.each do |comment|%>
     <tr>
       <td> <%= comment.body %></td>
-      <% if comment.user.name=="" %>
+      <% if comment.user.name.blank? %>
         <td> <%= comment.user.email %></td>
       <% else %>
         <td> <%= comment.user.name %></td>
