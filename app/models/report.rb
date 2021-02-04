@@ -5,7 +5,6 @@ class Report < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
 
   def user_equal?(current_user)
-    self.user==current_user
+    user == current_user
   end
-
 end

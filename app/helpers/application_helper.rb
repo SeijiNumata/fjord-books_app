@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def current_user?(model)
-    current_user==model.user
+    current_user == model.user
   end
 end

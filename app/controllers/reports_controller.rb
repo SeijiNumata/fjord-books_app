@@ -65,5 +65,4 @@ class ReportsController < ApplicationController
     redirect_to reports_path
     flash[:alert] = t('controllers.report.notice_alert')
   end
-
 end
