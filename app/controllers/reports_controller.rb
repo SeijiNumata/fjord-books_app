@@ -56,14 +56,15 @@ class ReportsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def report_params
-    params.require(:report).permit(:title, :description, :user_id)
+    params.require(:report).permit(:title, :description).merge(user_id: current_user.id)
   end
 
   def contribute_user?
     return true if current_user == @report.user
 
     redirect_to reports_path
-    flash[:notice] = t('controllers.report.notice_alert')
+    flash[:alert] = t('controllers.report.notice_alert')
   end
+
 
 end
