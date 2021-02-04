@@ -3,7 +3,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
   before_action :contribute_user?, only: %i[edit update destroy]
-
   # GET /reports
   def index
     @reports = Report.all.order(:id).page(params[:page])
@@ -27,7 +26,6 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = Report.new(report_params)
-
     if @report.save
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
@@ -68,4 +66,5 @@ class ReportsController < ApplicationController
     redirect_to reports_path
     flash[:notice] = t('controllers.report.notice_alert')
   end
+
 end
