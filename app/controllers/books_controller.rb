@@ -2,7 +2,8 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
-
+  before_action :set_commentable, only: %i[create]
+  
   # GET /books
   # GET /books.json
   def index
@@ -11,7 +12,10 @@ class BooksController < ApplicationController
 
   # GET /books/1
   # GET /books/1.json
-  def show; end
+  def show
+    @comment=Comment.new
+    @comments = @book.comments.includes(:user).order(:id).page(params[:page])
+  end
 
   # GET /books/new
   def new

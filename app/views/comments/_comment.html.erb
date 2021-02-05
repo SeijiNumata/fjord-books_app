@@ -1,0 +1,33 @@
+<h2><%= t('comments.post') %></h2>
+
+<%= form_with model: [commentable, comment] do |f| %>
+  <%= f.text_area :body, :required => true %>
+<%= f.submit  %>
+<% end %>
+
+<h2><%= t('comments.index') %></h2>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('comments.comment')%></th>
+      <th><%= t('comments.user') %></th>
+      <th><%= t('comments.created_at') %> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment|%>
+    <tr>
+      <td> <%= comment.body %></td>
+      <% if comment.user.name.blank? %>
+        <td> <%= comment.user.email %></td>
+      <% else %>
+        <td> <%= comment.user.name %></td>
+      <% end %>
+      <td> <%= l comment.created_at, format: :short  %><br></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @comments %>

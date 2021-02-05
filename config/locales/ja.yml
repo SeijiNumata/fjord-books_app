@@ -145,6 +145,8 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+      comment:
+        create: コメントする
   number:
     currency:
       format:
@@ -240,11 +242,20 @@ ja:
     followers:
       index:
         title: フォロワー
+  comments:
+    comment: コメント
+    post: コメント投稿
+    index: コメント一覧
+    user: 投稿者
+    created_at: 投稿時間
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    report:
+      notice_alert: "投稿者以外編集、削除はできません。"
+
   relationships:
     create:
       notice: "フォローしました。"
