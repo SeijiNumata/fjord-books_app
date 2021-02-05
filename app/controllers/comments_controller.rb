@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_commentable, only: %i[create]
+   before_action :set_commentable, only: %i[create]
   def create
     @comment = @commentable.comments.build(comment_params)
 

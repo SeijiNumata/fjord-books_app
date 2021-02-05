@@ -3,6 +3,8 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
   before_action :contribute_user?, only: %i[edit update destroy]
+  before_action :set_commentable, only: %i[create]
+
   # GET /reports
   def index
     @reports = Report.all.order(:id).page(params[:page])
