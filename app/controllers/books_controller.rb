@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @comment = @book.comments.build(user_id: current_user.id)
+    @comment=Comment.new
     @comments = @book.comments.includes(:user).order(:id).page(params[:page])
   end
 
